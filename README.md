@@ -1,5 +1,6 @@
 # Ansible
 
-|Training     |Tools|
+|Folder     |Tools|
 |-------------|-----------|
 |`1.Alura`| Ansible & Vagrant
+|`Playbooks`| yaml playbooks
