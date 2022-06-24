@@ -1,0 +1,17 @@
+---
+
+- name: "PLAYBOOK INSTALL-AWX - RHEL"
+  hosts: localhost
+  roles: 
+    - rhel
+  when:
+    - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'RedHat') or (platform is defined and platform == 'RedHat')
+
+- name: "PLAYBOOK INSTALL-AWX - RHEL"
+  hosts: localhost
+  roles: 
+    - debian
+  when:
+    - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'RedHat') or (platform is defined and platform == 'RedHat')
+
+...
