@@ -3,8 +3,11 @@
 packages:
   - make
   - gcc
-  - perl-core
-  - pcre-devel
-  - zlib-devel
+  - perl-base
+  - libpcre3-dev
+  - zlib1g-dev
+  - ca-certificates
+
+host: vmdev08.vmdev.bk.sapo.pt
 
 ...
