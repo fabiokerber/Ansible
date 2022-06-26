@@ -1,17 +1,21 @@
 ---
 
 - name: "RHEL PLAYBOOK INSTALL-AWX"
-  hosts: all
+  hosts: localhost
+  vars_files:
+    - roles/rhel/vars/main.yml
   tasks:
     - name: "RHEL OS"
-      include_tasks: roles/debian/tasks/main.yml
+      include_tasks: roles/rhel/tasks/main.yml
       when:
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'RedHat') 
 
 - name: "DEBIAN PLAYBOOK INSTALL-AWX"
   hosts: localhost
+  vars_files:
+    - roles/debian/vars/main.yml
   tasks:
-    - name: "DEBIAN OS"
+    - name: "RHEL OS"
       include_tasks: roles/debian/tasks/main.yml
       when:
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') 
