@@ -33,15 +33,7 @@
     dest: /tmp/
     remote_src: yes
 
-- name: RHEL | Install openssl v1.1.1
-  ansible.builtin.shell: ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
-  args:
-    chdir: /tmp/openssl-1.1.1j/
-  become_method: su
-  become_exe: sudo su -
-  become_user: root
-
-- name: RHEL | Config and install openssl v1.1.1 [1]
+- name: RHEL | Install openssl v1.1.1 [1]
   ansible.builtin.shell: ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
   args:
     chdir: /tmp/openssl-1.1.1j/

@@ -11,7 +11,7 @@
     state: latest
 
 - name: DEBIAN | Check OpenSSL Version
-  ansible.builtin.shell: openssl version | awk '{print $2}'
+  ansible.builtin.shell: "openssl version | awk '{print $2}'"
   register: opensslversion
 
 - name: DEBIAN | Download openssl v1.1.1 - Step 1
@@ -23,7 +23,7 @@
   when: opensslversion.results[0].stdout != "1.1.1p"
 
 - name: DEBIAN | Install openssl v1.1.1 - Step 2
-  ansible.builtin.shell: ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
+  ansible.builtin.shell: "./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic"
   args:
     chdir: /tmp/openssl-1.1.1p/
   become_method: su
@@ -32,7 +32,7 @@
   when: opensslversion.results[0].stdout != "1.1.1p"
 
 - name: DEBIAN | Config and install openssl v1.1.1 - Step 3
-  ansible.builtin.shell: ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic
+  ansible.builtin.shell: "make"
   args:
     chdir: /tmp/openssl-1.1.1p/
   become_method: su
@@ -41,7 +41,7 @@
   when: opensslversion.results[0].stdout != "1.1.1p"
 
 - name: DEBIAN | Config and install openssl v1.1.1 - Step 4
-  ansible.builtin.shell: make
+  ansible.builtin.shell: "make install"
   args:
     chdir: /tmp/openssl-1.1.1p/
   become_method: su
@@ -50,16 +50,7 @@
   when: opensslversion.results[0].stdout != "1.1.1p"
 
 - name: DEBIAN | Config and install openssl v1.1.1 - Step 5
-  ansible.builtin.shell: make install
-  args:
-    chdir: /tmp/openssl-1.1.1p/
-  become_method: su
-  become_exe: sudo su -
-  become_user: root
-  when: opensslversion.results[0].stdout != "1.1.1p"
-
-- name: DEBIAN | Config and install openssl v1.1.1 - Step 6
-  ansible.builtin.shell: echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64" >> ~/.bashrc
+  ansible.builtin.shell: "echo 'export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64' >> ~/.bashrc"
   become_method: su
   become_exe: sudo su -
   become_user: root
