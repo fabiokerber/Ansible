@@ -13,6 +13,8 @@
 - name: DEBIAN | Check OpenSSL Version
   ansible.builtin.shell: "openssl version | awk '{print $2}'"
   register: opensslversion
+  debug:
+    msg: "{{ opensslversion.results[0].stdout_lines }}"
 
 - name: DEBIAN | Download openssl v1.1.1 - Step 1
   ansible.builtin.unarchive:
