@@ -18,6 +18,6 @@
     - name: "DEBIAN OS"
       include_tasks: roles/debian/tasks/main.yml
       when:
-      - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '6')
+      - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '9')
 
 ...
