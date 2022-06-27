@@ -7,6 +7,7 @@ packages:
   - libpcre3-dev
   - zlib1g-dev
   - ca-certificates
+  - curl
 
 host: vmdev08.vmdev.bk.sapo.pt
 
