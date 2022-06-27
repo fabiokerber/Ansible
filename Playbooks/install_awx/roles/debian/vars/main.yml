@@ -8,7 +8,9 @@ packages:
   - zlib1g-dev
   - ca-certificates
   - curl
+  - build-essential
+  - checkinstall
 
-host: vmdev08.vmdev.bk.sapo.pt
+host: vmdev08.awx.lab
 
 ...
