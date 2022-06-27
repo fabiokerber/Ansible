@@ -15,9 +15,9 @@
   vars_files:
     - roles/debian/vars/main.yml
   tasks:
-    - name: "RHEL OS"
+    - name: "DEBIAN OS"
       include_tasks: roles/debian/tasks/main.yml
       when:
-      - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') 
+      - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') and (ansible_distribution_major_version == '6')
 
 ...
