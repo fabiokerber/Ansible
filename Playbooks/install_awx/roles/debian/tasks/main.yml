@@ -81,7 +81,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/ansible/awx-operator.git'
     dest: /usr/local/src/awx-operator
-    version: 0.20.0
+    version: 0.23.0
 
 - name: AWX | Clone repo AWX-ON-K3S
   ansible.builtin.git:
