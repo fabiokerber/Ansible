@@ -61,7 +61,10 @@
   when: opensslversion.stdout != "1.1.1p"
 
 - name: AWX | Install/Configure K3s
-  ansible.builtin.shell:  "curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644"
+  ansible.builtin.shell: "curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644"
+  become_method: su
+  become_exe: sudo su -
+  become_user: root
 
 - name: AWX | Create folders 
   ansible.builtin.file:
