@@ -1,9 +1,5 @@
 ---
 
-- name: RHEL | Set timezone America/Sao_Paulo
-  community.general.timezone:
-    name: America/Sao_Paulo
-
 - name: RHEL | Update system
   yum:
     name: "*"
