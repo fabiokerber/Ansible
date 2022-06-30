@@ -33,6 +33,7 @@ https://githubmemory.com/index.php/repo/kurokobo/awx-on-k3s/issues/22
 https://github.com/ansible/awx-operator/issues/640
 https://groups.google.com/g/awx-project
 https://github.com/ansible/awx-operator/issues/839
+https://youtu.be/p6EkmWm1Kz4 (Ingress test)
 
 Viabilizar duas máquinas Virtuais Debian:
 
