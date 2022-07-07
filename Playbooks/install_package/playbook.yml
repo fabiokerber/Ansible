@@ -4,7 +4,7 @@
   hosts: all
   tasks:
     - name: "RHEL OS"
-      include_tasks: roles/rhel/tasks/main.yml
+      include_tasks: rhel/tasks/main.yml
       when:
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'RedHat') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '7.8')
 
@@ -12,7 +12,7 @@
   hosts: all
   tasks:
     - name: "DEBIAN OS"
-      include_tasks: roles/debian/tasks/main.yml
+      include_tasks: debian/tasks/main.yml
       when:
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '9')
 
@@ -20,7 +20,7 @@
   hosts: all
   tasks:
     - name: "UBUNTU OS"
-      include_tasks: roles/ubuntu/tasks/main.yml
+      include_tasks: ubuntu/tasks/main.yml
       when:
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Ubuntu') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '20')
 
