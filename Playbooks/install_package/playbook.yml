@@ -1,7 +1,7 @@
 ---
 
 - name: "RHEL PLAYBOOK INSTALL PACKAGE"
-  hosts: localhost
+  hosts: "{{ hostname | lower }}"
   tasks:
     - name: "RHEL OS"
       include_tasks: roles/rhel/tasks/main.yml
@@ -9,7 +9,7 @@
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'RedHat') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '7.8')
 
 - name: "DEBIAN PLAYBOOK INSTALL PACKAGE"
-  hosts: localhost
+  hosts: "{{ hostname | lower }}"
   tasks:
     - name: "DEBIAN OS"
       include_tasks: roles/debian/tasks/main.yml
@@ -17,7 +17,7 @@
       - (ansible_facts['distribution'] is defined and ansible_facts['distribution'] == 'Debian') and (ansible_facts['distribution_major_version'] is defined and ansible_facts['distribution_major_version'] == '9')
 
 - name: "UBUNTU PLAYBOOK INSTALL PACKAGE"
-  hosts: localhost
+  hosts: "{{ hostname | lower }}"
   tasks:
     - name: "UBUNTU OS"
       include_tasks: roles/ubuntu/tasks/main.yml
