@@ -1,0 +1,14 @@
+---
+
+- name: UBUNTU | Apt Update
+  ansible.builtin.shell: "apt update"
+
+- name: UBUNTU | Install package
+  ansible.builtin.apt:
+    name: "{{ package }}"
+    state: latest
+
+- name: UBUNTU | Check version installed
+  ansible.builtin.shell: "apt list --installed | grep {{ package }}"
+
+...
