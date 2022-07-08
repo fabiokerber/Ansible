@@ -47,7 +47,7 @@
 
       - name: REMOVE FILES | Show Files Removed
         debug:
-          msg: "{{ filesremoved }}"
+          msg: "{{ filesremoved.stdout_lines }}"
 
     always:
 
