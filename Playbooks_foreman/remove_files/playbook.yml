@@ -54,7 +54,7 @@
       - name: LOGBOOK REMOVE FILES
         lineinfile:
           path: /var/log/exec_ansible.log
-          line: "{{ lookup('pipe','TZ=\"Europe/Lisbon\" date +%Y-%m-%dT%H:%M:%S.%s') }} - Exec PLAYBOOK REMOVE FILES"
+          line: "{{ lookup('pipe','TZ=\"Europe/Lisbon\" date +%d/%m/%Y-%H:%M:%S') }} - Exec PLAYBOOK REMOVE FILES"
           create: yes
 
 ...
