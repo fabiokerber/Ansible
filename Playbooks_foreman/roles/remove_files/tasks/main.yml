@@ -1,5 +1,15 @@
 ---
 
+- name: "Create a Job Template inline"
+  theforeman.foreman.job_template:
+    name: SAPO - Remove Files
+    provider_type: Ansible
+    job_category: SAPO - Ansible
+    state: present
+    template: |
+
+---
+
 - name: PLAYBOOK REMOVE FILES
   hosts: all
   become: true
@@ -56,5 +66,10 @@
           path: /var/log/exec_ansible.log
           line: "{{ lookup('pipe','TZ=\"Europe/Lisbon\" date +%d/%m/%Y-%H:%M:%S') }} - Exec PLAYBOOK REMOVE FILES"
           create: yes
+
+    locations:
+    - Default Location
+    organizations:
+    - Default Organization
 
 ...
