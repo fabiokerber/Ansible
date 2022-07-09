@@ -3,7 +3,6 @@
 - name: PLAYBOOK INSTALL PACKAGE
   hosts: all
   become: true
-  ignore_errors: yes
   tasks:
   - name: UBUNTU INSTALL PACKAGE
     block:
