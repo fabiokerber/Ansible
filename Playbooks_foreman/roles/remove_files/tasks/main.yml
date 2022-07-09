@@ -1,11 +1,12 @@
 ---
 
-- name: "Create a Job Template inline"
+- name: rola
   theforeman.foreman.job_template:
     name: SAPO - Remove Files
     provider_type: Ansible
     job_category: SAPO - Ansible
     state: present
+    validate_certs: no
     template: | 
       <%#
 
