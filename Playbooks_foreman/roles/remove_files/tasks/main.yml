@@ -8,8 +8,6 @@
     state: present
     template: |
 
----
-
 - name: PLAYBOOK REMOVE FILES
   hosts: all
   become: true
